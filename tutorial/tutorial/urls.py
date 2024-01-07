@@ -1,7 +1,9 @@
+# Imports -> Django
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
+# Imports -> Quickstart -> Views
 from quickstart import views
 
 # Routers -> Default router to register the viewsets
