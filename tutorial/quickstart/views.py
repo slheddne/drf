@@ -1,6 +1,8 @@
+# Imports -> Django
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, permissions
 
+# Imports -> Quickstart -> Models & Serializers
 from quickstart.models import Song
 from quickstart.serializers import UserSerializer, GroupSerializer, SongSerializer
 
