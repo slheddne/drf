@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, permissions
 
-from quickstart.serializers import UserSerializer, GroupSerializer
+from quickstart.models import Song
+from quickstart.serializers import UserSerializer, GroupSerializer, SongSerializer
 
 
 # ViewSet -> User viewset to represent the User model
@@ -22,3 +23,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = (permissions.IsAuthenticated,)  # Only authenticated users can view or edit the groups
+
+
+# ViewSet -> Song viewset to represent the Song model
+class SongViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited
+    """
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+    permission_classes = (permissions.IsAuthenticated,)  # Only authenticated users can view or edit the songs
